@@ -1,0 +1,37 @@
+{
+ "name": "hope",
+ "children": [
+  {
+   "name": "colleges",
+   "children": [
+    {
+     "name": "Research Colleges",
+     "children": [
+      {"name": "University of Georgia", "size": 107848},
+      {"name": "Georgia Institute of Technology", "size": 35327},
+      {"name": "Georgia State University", "size": 60856}
+     ]
+    },
+    {
+     "name": "Regional Universities",
+     "children": [
+      {"name": "Valdasta State University", "size": 34863},
+      {"name": "Georgia Southern University", "size": 53728}
+   ]
+    },
+    {
+     "name": "State Universities",
+     "children": [
+      {"name": "Kennesaw State University", "size": 49367}
+   ]
+    },
+    {
+     "name": "State Colleges",
+     "children": [
+      {"name": "Georgia Perimeter College", "size": 45617}
+   ]
+    }
+    ]
+  }
+   ]
+  }

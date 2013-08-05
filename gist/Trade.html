@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>US FOREIGN TRADE</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+<section id="wrapper">
+  <header> US Foreign Trade</header>
+  <section>
+  <nav id="year_selection">
+    <a href ="#" id="2010" class="btn active">2010</a> 
+    <a href ="#" id="2009" class="btn">2009</a> 
+    <a href ="#" id="2008" class="btn">2008</a> 
+    <a href ="#" id="2007" class="btn" >2007</a> 
+    <a href ="#" id="2006" class="btn" >2006</a> 
+  </nav>
+  </section>
+  <section id="information">
+    <p>Values are in millions of dollars.</p>
+    <p>All values are not seasonally adjusted except:
+      0004 World (seasonally adjusted)</p>
+    <p>Country codes beginning with the number 0 (zero) are unofficial country
+      codes created by the Foreign Trade Division for organizational use only.
+      These codes are not valid for reporting or statistical purposes. </p>
+    <p>
+     <section id="keys"></section>
+  </section>
+  <section id="vis"></section>
+  
+</section>
+<footer>
+  <p>SOURCE - U.S. Department of Commerce, Bureau of the Census, Foreign Trade
+    Division. </p>
+  <p> For more information, contact Matthew Przybocki (301-763-3148)
+    or Maria Iseman (301-763-2311), Foreign Trade Division.</p>
+</footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+<script src="http://d3js.org/d3.v2.min.js"></script> 
+<script src="BubbleChart.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(document).ready(function() {
+          $('#year_selection a').click(function() {
+            var view_type = $(this).attr("id");
+            $('#year_selection a').removeClass('active');
+            $(this).toggleClass('active');
+            toggle_view(view_type);
+            return false;
+          });
+        });
+    });
+  </script>
+</body>
+</html>
