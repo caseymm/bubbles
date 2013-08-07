@@ -1,7 +1,12 @@
 $(document).ready(function() {
   $('#typeInfo').hide();
   $('#mostToLeast').hide();
+  $('#bar').hide();
+  
+  bubbles();
   });
+
+function bubbles() {
 var w = 800,
     h = 600;
 
@@ -55,6 +60,7 @@ node.append("svg:circle")
         .attr("r", function(d) { return radius_scale(parseInt(d.students)); })
         .attr("fill", function(d) { return d.fill; })
         .attr("stroke", function(d) { return d.stroke; })
+        .attr("id", (function(d) { return d.id; }))
         .call(d3.helper.tooltip()
             .text(function(d){ return 'School: '+ d.college + '<br />Type of School: '+ d.type +'<br />HOPE Students: ' +commasFormatter(d.students) +'<br />Amount Awarded: $'+ commasFormatter(d.amount); })
         )
@@ -94,6 +100,7 @@ force.on("tick", function(e) {
 d3.select("#sort").on("click", function(e){
   $('#typeInfo').show()
   $('#mostToLeast').hide()
+  $('#bar').hide()
   force.on("tick", function(e) {
     svg.selectAll("circle").attr("r", function(d) { return radius_scale(parseInt(d.students));})
        .attr("transform", function(d) { return "translate(" + d.xValue + "," + d.yValue + ")";});
@@ -115,9 +122,13 @@ d3.select("#sort").on("click", function(e){
 d3.select("#sortSize").on("click", function(e){
   $('#typeInfo').hide()
   $('#mostToLeast').show()
+  $('#bar').show()
   force.on("tick", function(e) {
     svg.selectAll("circle").attr("r", function(d) { return radius_scale(parseInt(d.students)*.25); })
-      .attr("transform", function(d) { return "translate(" + d.xValueB + "," + d.yValueB + ")";});
+      .attr("transform", function(d) { return "translate(" + d.xValueB + "," + d.yValueB + ")";})
+      .on("click", function(d) {
+            $('#'+d.id).css( "fill", "green" )
+            });
     svg.selectAll("image")
       .transition().duration(100)
       .attr("x", function(d) { return (radius_scale(parseInt(d.students))*-.5); })
@@ -137,6 +148,7 @@ d3.select("#sortSize").on("click", function(e){
 d3.select("#unSort").on("click", function(e){
   $('#typeInfo').hide()
   $('#mostToLeast').hide()
+  $('#bar').hide()
   force.on("tick", function(e) {
     svg.selectAll("circle")
        .on('mouseover', function(d){
@@ -163,3 +175,4 @@ d3.select("#unSort").on("click", function(e){
   });
  });
 });
+};

@@ -4,7 +4,6 @@ body{
     color: #000;
     margin:0px;
 }
-
 .axis path,
 .axis line {
   fill: none;
@@ -61,6 +60,12 @@ p{
 #bubbles{
     margin:auto;
     width:800px;
+}
+
+#bar{
+    margin:auto;
+    width:860px;
+    margin-top: -300px;
 }
 
 .bubbleArea{

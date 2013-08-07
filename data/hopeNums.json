@@ -1,5 +1,4 @@
-{
-  "nodes":[
+[
 	
 	{
 		"id": "1",
@@ -13,17 +12,6 @@
 		"img":"../images/UGAball.png"
 	},
 	{
-		"id": "2",
-		"college": "Georgia Institute of Technology",
-		"type": "Research College",
-		"students": "35327",
-		"amount": "364221164",
-		"xValue": "192",
-		"fill": "#957b33",
-		"stroke": "#143685",
-		"img":"../images/GATechBall.png"
-	},
-	{
 		"id": "3",
 		"college": "Georgia State University",
 		"type": "Research College",
@@ -33,17 +21,6 @@
 		"fill": "#ffffff",
 		"stroke": "#005eab",
 		"img":"../images/GAStateBall.png"
-	},
-	{
-		"id": "4",
-		"college": "Valdosta State University",
-		"type": "Regional University",
-		"students": "34863",
-		"amount": "209941990",
-		"xValue": "384",
-		"fill": "#DBC39E",
-		"stroke": "#960816",
-		"img":"../images/valdostaBall.png"
 	},
 	{
 		"id": "5",
@@ -77,7 +54,28 @@
 		"fill": "#A81818",
 		"stroke": "#E3E3E3",
 		"img":"../images/gaPerimeterBall.png"
+	},
+	{
+		"id": "2",
+		"college": "Georgia Institute of Technology",
+		"type": "Research College",
+		"students": "35327",
+		"amount": "364221164",
+		"xValue": "192",
+		"fill": "#957b33",
+		"stroke": "#143685",
+		"img":"../images/GATechBall.png"
+	},
+	{
+		"id": "4",
+		"college": "Valdosta State University",
+		"type": "Regional University",
+		"students": "34863",
+		"amount": "209941990",
+		"xValue": "384",
+		"fill": "#DBC39E",
+		"stroke": "#960816",
+		"img":"../images/valdostaBall.png"
 	}
 
 ]
-}
