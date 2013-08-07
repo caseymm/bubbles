@@ -1,0 +1,126 @@
+{
+  "nodes": "values",
+  "children":[
+	
+	{
+		"id": "1",
+		"college": "University of Georgia",
+		"type": "Research College",
+		"students": "107848",
+		"amount": "1258281448",
+		"xValue": "192",
+		"fill": "#990000",
+		"stroke": "#000000",
+		"img":"../images/UGAball2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "2",
+		"college": "Georgia Institute of Technology",
+		"type": "Research College",
+		"students": "35327",
+		"amount": "364221164",
+		"xValue": "192",
+		"fill": "#957b33",
+		"stroke": "#143685",
+		"img":"../images/GATechBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "3",
+		"college": "Georgia State University",
+		"type": "Research College",
+		"students": "60856",
+		"amount": "536989789",
+		"xValue": "192",
+		"fill": "#ffffff",
+		"stroke": "#005eab",
+		"img":"../images/GAStateBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "4",
+		"college": "Valdosta State University",
+		"type": "Regional University",
+		"students": "34863",
+		"amount": "209941990",
+		"xValue": "384",
+		"fill": "#DBC39E",
+		"stroke": "#960816",
+		"img":"../images/valdostaBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "5",
+		"college": "Georgia Southern University",
+		"type": "Regional University",
+		"students": "53728",
+		"amount": "323547253",
+		"xValue": "384",
+		"fill": "#2235C7",
+		"stroke": "#C7A622",
+		"img":"../images/GASouthernBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "6",
+		"college": "Kennesaw State University",
+		"type": "State University",
+		"students": "49367",
+		"amount": "314197485",
+		"xValue": "576",
+		"fill": "#FFCC00",
+		"stroke": "#000000",
+		"img":"../images/kennesawBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	},
+	{
+		"id": "7",
+		"college": "Georgia Perimeter College",
+		"type": "State College",
+		"students": "45617",
+		"amount": "95796441",
+		"xValue": "768",
+		"fill": "#A81818",
+		"stroke": "#E3E3E3",
+		"img":"../images/gaPerimeterBall2.png",
+                "children": [
+                    {"classYear": "Converters", "size": 1100},
+                    {"classYear": "DelimitedTextConverter", "size": 900},
+                    {"classYear": "GraphMLConverter", "size": 1000},
+                    {"classYear": "IDataConverter", "size": 1050}
+                ]
+	}
+
+]
+}

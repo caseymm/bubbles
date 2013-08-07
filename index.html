@@ -4,6 +4,7 @@
     <title>Force-Directed Layout (Multiple Foci)</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.27.2"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
   </head>
   
 <style>
@@ -19,6 +20,11 @@ p{
     line-height: 16px;
 }
 
+@font-face{
+  font-family: 'cabin';
+  src: url(fonts/Cabin.otf);
+}
+
 .node {
   cursor: pointer;
   stroke: #3182bd;
@@ -31,14 +37,20 @@ p{
 }
 
 .node text {
-  font: 15px sans-serif;
+  font-family: 'cabin';
+  font-size: 25px;
   position:absolute;
   stroke-width: 0px;
   /*stroke: #000000;*/
   fill:#ffffff;
-  z-index:50;
   pointer-events:none;
- 
+  opacity:0.0;
+}
+.empty{
+  opacity:0.0;
+}
+.opaque{
+  opacity:1.0;
 }
 
 #unSort{
@@ -68,11 +80,11 @@ var svg = d3.select("body").append("svg:svg")
 var commasFormatter = d3.format(",.0f");
 var radius_scale = d3.scale.pow().exponent(0.5).domain([0, 107848]).range([2, 110]);
 
-d3.json("data/hopeNums.json", function(json) {
+d3.json("data/hopeChildren.json", function(json) {
   var force = d3.layout.force()
     .gravity(0.05)
     .charge(function(d, i) { return d.students*-.017; })
-    .nodes(json.nodes)
+    .nodes(json.children)
     .size([w, h])
     .links([])
     .start();
@@ -80,7 +92,7 @@ d3.json("data/hopeNums.json", function(json) {
       
 
 var node = svg.selectAll(".node")
-        .data(json.nodes)
+        .data(json.children)
         .enter().append("svg:g")
         .attr("class", "node");
 
@@ -91,13 +103,7 @@ node.append("image")
       .attr("x", function(d) { return (radius_scale(parseInt(d.students))*-1); })
       .attr("y", function(d) { return (radius_scale(parseInt(d.students))*-1); })
       .attr("width", function(d) { return (radius_scale(parseInt(d.students))*2); })
-      .attr("height", function(d) { return (radius_scale(parseInt(d.students))*2); });
-
-node.append("text")
-      .attr("dx", 0)
-      .attr("dy", function(d) { return (radius_scale(parseInt(d.students))*.7); })
-      .attr("text-anchor", "middle")
-      .text(function(d) { return commasFormatter(d.students); });      
+      .attr("height", function(d) { return (radius_scale(parseInt(d.students))*2); });     
       
 node.append("svg:circle")
         //.attr("cx", function(d) { return d.x; })
@@ -106,7 +112,24 @@ node.append("svg:circle")
         .attr("r", function(d) { return radius_scale(parseInt(d.students)); })
         .attr("fill", function(d) { return d.fill; })
         .attr("stroke", function(d) { return d.stroke; })
-        .call(force.drag);
+        .call(d3.helper.tooltip()
+            .text(function(d){ return 'School: '+ d.college + '<br />Type of School: '+ d.type +'<br />HOPE Students: ' +commasFormatter(d.students); })
+        )
+        .on('mouseover', function(d){
+            d3.select(this).transition().duration(300).style({opacity:'0.8'})
+            d3.select("text").style({opacity:'1.0'});
+                    })
+        .on('mouseout', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.0',})
+          d3.select("text").style({opacity:'0.0'});
+        })
+        .call(force.drag);        
+
+node.append("text")
+      .attr("dx", 0)
+      .attr("dy", function(d) { return (radius_scale(parseInt(d.students))*.7); })
+      .attr("text-anchor", "middle")
+      .text(function(d) { return commasFormatter(d.students); }); 
 
 svg.style("opacity", 1e-6)
   .transition()
@@ -150,6 +173,7 @@ d3.select("#sort").on("click", function(e){
         return "translate(" + d.xValue + "," + d.y + ")";
       });
     });
+  force.resume();
   });
   
 d3.select("#unSort").on("click", function(e){
@@ -166,6 +190,7 @@ d3.select("#unSort").on("click", function(e){
         return "translate(" + d.x + "," + d.y + ")";
       });
     });
+  force.resume();
   });
 });
 
