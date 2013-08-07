@@ -38,7 +38,7 @@ d3.helper = {};
                     '-moz-box-shadow':  '2px 2px 5px 2px rgba(0, 0, 0, 0.15)'
                 });
                 // Add text using the accessor function, Crop text arbitrarily
-                tooltipDiv.style('width', function(d, i){ return (text(pD, pI).length > 80) ? '230px' : null; })
+                tooltipDiv.style('width', function(d, i){ return (text(pD, pI).length > 80) ? '250px' : null; })
                     .html(function(d, i){return text(pD, pI);});
             })
             .on('mousemove.tooltip', function(pD, pI){
