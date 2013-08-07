@@ -1,0 +1,106 @@
+body{
+    font-family: 'helvetica';
+    font-size:12px;
+    color: #000;
+    margin:0px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: none;
+}
+
+p{
+    font-size:13px;
+    line-height: 16px;
+}
+
+@font-face{
+  font-family: 'cabin';
+  src: url(../fonts/Cabin.otf);
+}
+
+.node {
+  cursor: pointer;
+  stroke: #3182bd;
+  stroke-width: 0px;
+  text-decoration: none;
+}
+
+.node circle{
+  opacity:0.0;
+}
+
+.node text {
+  font-family: 'cabin';
+  font-size: 25px;
+  position:absolute;
+  stroke-width: 0px;
+  /*stroke: #000000;*/
+  fill:#ffffff;
+  pointer-events:none;
+  opacity:0.0;
+}
+.empty{
+  opacity:0.0;
+}
+.opaque{
+  opacity:1.0;
+}
+
+#bubbles{
+    margin:auto;
+    width:800px;
+}
+
+.bubbleArea{
+    width:800px;
+    margin:auto;
+    height: 40px;
+}
+#typeInfo{
+    
+}
+.A{
+    position:relative;
+    display:inline-block;
+    margin: 15px 105px 0px 55px;
+}
+.B{
+    position:relative;
+    display:inline-block;
+}
+.C{
+    position:relative;
+    display:inline-block;
+    margin: 0px 92px 0px 76px;
+}
+.D{
+    position:relative;
+    display:inline-block;
+}
+
+#mostToLeast{
+    font-size: 30px;
+    line-height: 15px;
+    margin-top: 12px;
+}
+
+.most{
+    margin: 0px 0px 0px 60px;
+}
+
+.least{
+    float:right;
+    margin: 0px 60px 0px 0px;
+}

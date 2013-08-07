@@ -25,7 +25,7 @@ d3.helper = {};
                     'background-color': '#fff',
                     padding: '2px 4px 2px 4px',
                     'font-family': 'cabin',
-                    'font-size': '15px',
+                    'font-size': '14px',
                     'z-index': 1001,
                     '-webkit-border-radius': '5px',
                     'border-radius': '5px',
