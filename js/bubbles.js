@@ -7,7 +7,7 @@ $(document).ready(function() {
   });
 
 function bubbles() {
-var w = 800,
+var w = 880,
     h = 600;
 
 var svg = d3.select("#bubbles").append("svg:svg")
@@ -60,19 +60,22 @@ node.append("svg:circle")
         .attr("r", function(d) { return radius_scale(parseInt(d.students)); })
         .attr("fill", function(d) { return d.fill; })
         .attr("stroke", function(d) { return d.stroke; })
-        .attr("id", (function(d) { return d.id; }))
+        //.attr("id", (function(d) { return d.id+"ball"; }))
         .call(d3.helper.tooltip()
             .text(function(d){ return 'School: '+ d.college + '<br />Type of School: '+ d.type +'<br />HOPE Students: ' +commasFormatter(d.students) +'<br />Amount Awarded: $'+ commasFormatter(d.amount); })
         )
-        .on('mouseover', function(d){
-          d3.select(this).transition().duration(300).style({opacity:'0.8'});
+        /*.on('mouseover', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.8'});
+          $('#'+d.id+'bar').css( {"fill": ''+d.fill+'', "transition-duration": "300ms"} );
                     })
         .on('mouseout', function(d){
-          d3.select(this).transition().duration(200).style({opacity:'0.0',});
-                    })
+          d3.select(this).transition().duration(200).style({opacity:'0.0'});
+          $('#'+d.id+'bar').css( {"fill": "#C2C2C2", "transition-duration": "200ms"} );
+                    })*/
         .call(force.drag);        
 
 node.append("text")
+      .attr("id", (function(d) { return d.id+"text"; }))
       .attr("dx", 0)
       //.attr("dy", function(d) { return (radius_scale(parseInt(d.students))*.7); })
       .attr("dy", function(d) { return (radius_scale(parseInt(d.students))*.2); })
@@ -86,9 +89,13 @@ svg.style("opacity", 1e-6)
     .style("opacity", 1);      
       
 force.on("tick", function(e) {
-      svg.selectAll("circle").attr("transform", function(d) {
-        return "translate(" + d.x + "," + d.y + ")";
-      });
+      svg.selectAll("circle").attr("transform", function(d) {return "translate(" + d.x + "," + d.y + ")";})
+         .on('mouseover', function(d){
+          d3.select(this).transition().duration(300).style({opacity:'0.8'});
+                    })
+         .on('mouseout', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.0',});
+                    });
       svg.selectAll("image").attr("transform", function(d) {
         return "translate(" + d.x + "," + d.y + ")";
       });
@@ -103,7 +110,14 @@ d3.select("#sort").on("click", function(e){
   $('#bar').hide()
   force.on("tick", function(e) {
     svg.selectAll("circle").attr("r", function(d) { return radius_scale(parseInt(d.students));})
-       .attr("transform", function(d) { return "translate(" + d.xValue + "," + d.yValue + ")";});
+       .attr("id", (function(d) { return d.id+""; }))
+       .attr("transform", function(d) { return "translate(" + d.xValue + "," + d.yValue + ")";})
+       .on('mouseover', function(d){
+          d3.select(this).transition().duration(300).style({opacity:'0.8'});
+                    })
+       .on('mouseout', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.0',});
+                    });
     svg.selectAll("image")
       .transition().duration(100)
       .attr("x", function(d) { return (radius_scale(parseInt(d.students))*-1); })
@@ -126,9 +140,15 @@ d3.select("#sortSize").on("click", function(e){
   force.on("tick", function(e) {
     svg.selectAll("circle").attr("r", function(d) { return radius_scale(parseInt(d.students)*.25); })
       .attr("transform", function(d) { return "translate(" + d.xValueB + "," + d.yValueB + ")";})
-      .on("click", function(d) {
-            $('#'+d.id).css( "fill", "green" )
-            });
+      .attr("id", (function(d) { return d.id+"ball"; }))
+      .on('mouseover', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.8'})
+          $('#'+d.id+'bar').css( {"fill": ''+d.fill+'', "transition-duration": "200ms"} );
+                    })
+      .on('mouseout', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.0',})
+          $('#'+d.id+'bar').css( {"fill": "#C2C2C2", "transition-duration": "200ms"} );
+                    });
     svg.selectAll("image")
       .transition().duration(100)
       .attr("x", function(d) { return (radius_scale(parseInt(d.students))*-.5); })
@@ -151,6 +171,7 @@ d3.select("#unSort").on("click", function(e){
   $('#bar').hide()
   force.on("tick", function(e) {
     svg.selectAll("circle")
+       .attr("id", (function(d) { return d.id+""; }))
        .on('mouseover', function(d){
           d3.select(this).transition().duration(300).style({opacity:'0.8'});
                     })

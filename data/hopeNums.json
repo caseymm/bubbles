@@ -3,6 +3,7 @@
 	{
 		"id": "1",
 		"college": "University of Georgia",
+		"abbr": "University of Georgia",
 		"type": "Research College",
 		"students": "107848",
 		"amount": "1258281448",
@@ -14,17 +15,19 @@
 	{
 		"id": "3",
 		"college": "Georgia State University",
+		"abbr": "Georgia State",
 		"type": "Research College",
 		"students": "60856",
 		"amount": "536989789",
 		"xValue": "192",
-		"fill": "#ffffff",
-		"stroke": "#005eab",
+		"fill": "#005eab",
+		"stroke": "#ffffff",
 		"img":"../images/GAStateBall.png"
 	},
 	{
 		"id": "5",
 		"college": "Georgia Southern University",
+		"abbr": "Georgia Southern",
 		"type": "Regional University",
 		"students": "53728",
 		"amount": "323547253",
@@ -36,6 +39,7 @@
 	{
 		"id": "6",
 		"college": "Kennesaw State University",
+		"abbr": "Kennesaw State",
 		"type": "State University",
 		"students": "49367",
 		"amount": "314197485",
@@ -47,6 +51,7 @@
 	{
 		"id": "7",
 		"college": "Georgia Perimeter College",
+		"abbr": "Georgia Perimeter",
 		"type": "State College",
 		"students": "45617",
 		"amount": "95796441",
@@ -58,6 +63,7 @@
 	{
 		"id": "2",
 		"college": "Georgia Institute of Technology",
+		"abbr": "Georgia Tech",
 		"type": "Research College",
 		"students": "35327",
 		"amount": "364221164",
@@ -69,6 +75,7 @@
 	{
 		"id": "4",
 		"college": "Valdosta State University",
+		"abbr": "Valdosta State",
 		"type": "Regional University",
 		"students": "34863",
 		"amount": "209941990",

@@ -37,6 +37,10 @@ d3.helper = {};
                     'box-shadow':  '2px 2px 5px 2px rgba(0, 0, 0, 0.15)',
                     '-moz-box-shadow':  '2px 2px 5px 2px rgba(0, 0, 0, 0.15)'
                 });
+                /*tooltipDiv.style("left", function(pD, pI) {
+                       if (absoluteMousePos[0]>630) {return ''+(absoluteMousePos[0] - 260)+'px'}
+                       else {return ''+(absoluteMousePos[0] + 10)+'px'};    
+                })*/
                 // Add text using the accessor function, Crop text arbitrarily
                 tooltipDiv.style('width', function(d, i){ return (text(pD, pI).length > 80) ? '250px' : null; })
                     .html(function(d, i){return text(pD, pI);});
@@ -44,9 +48,15 @@ d3.helper = {};
             .on('mousemove.tooltip', function(pD, pI){
                 // Move tooltip
                 var absoluteMousePos = d3.mouse(bodyNode);
-                tooltipDiv.style({
-                    left: (absoluteMousePos[0] + 10)+'px',
-                    top: (absoluteMousePos[1] - 15)+'px'
+                tooltipDiv.style(
+                    "left", function(pD, pI) {
+                    if (absoluteMousePos[0]>700) {return ''+(absoluteMousePos[0] - 260)+'px'}
+                    else {return ''+(absoluteMousePos[0] + 10)+'px'}
+                    })
+                tooltipDiv.style(    
+                    "top", function(pD, pI) {
+                    if (absoluteMousePos[0]>700) {return ''+(absoluteMousePos[1] - 15)+'px'}
+                    else {return ''+(absoluteMousePos[1] -15)+'px'};
                 });
                 // Keep updating the text, it could change according to position
                 tooltipDiv.html(function(d, i){ return text(pD, pI); });

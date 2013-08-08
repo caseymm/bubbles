@@ -12,7 +12,7 @@ body{
 }
 
 .bar {
-  fill: steelblue;
+  fill: #C2C2C2;
 }
 
 .x.axis path {
@@ -59,17 +59,17 @@ p{
 
 #bubbles{
     margin:auto;
-    width:800px;
+    width:880px;
 }
 
 #bar{
     margin:auto;
-    width:860px;
-    margin-top: -300px;
+    width:880px;
+    margin-top: -470px;
 }
 
 .bubbleArea{
-    width:800px;
+    width:880px;
     margin:auto;
     height: 40px;
 }
@@ -102,10 +102,10 @@ p{
 }
 
 .most{
-    margin: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 93px;
 }
 
 .least{
     float:right;
-    margin: 0px 60px 0px 0px;
+    margin: 0px 35px 0px 0px;
 }

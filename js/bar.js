@@ -1,13 +1,13 @@
 var data;
 
-var margin = {top: 20, right: 20, bottom: 30, left: 80},
-    width = 830 - margin.left - margin.right,
+var margin = {top: 20, right: 0, bottom: 130, left: 60},
+    width = 880 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var formatPercent = d3.format(",.0f");
+var commasFormatter = d3.format(",.0f");
 
 var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+    .rangeRoundBands([0, width], .2);
 
 var y = d3.scale.linear()
     .range([height, 0]);
@@ -19,7 +19,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .tickFormat(formatPercent);
+    .tickFormat(commasFormatter);
 
 var svg = d3.select("#bar").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -29,13 +29,21 @@ var svg = d3.select("#bar").append("svg")
 
 d3.json("../data/hopeNums.json", function(json) {
   data = json;
-  x.domain(data.map(function(d) { return d.college; }));
-  y.domain([0, d3.max(data, function(d) { return d.students; })]);
+  x.domain(data.map(function(d) { return d.abbr; }));
+  y.domain([0, d3.max(data, function(d) { return +d.students; })]);
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll("text")  
+            .style("text-anchor", "middle")
+            .style("font-size", "11px");
+            /*.attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-45)" 
+                });*/
 
   svg.append("g")
       .attr("class", "y axis")
@@ -44,21 +52,35 @@ d3.json("../data/hopeNums.json", function(json) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Students");
+      .style("text-anchor", "end");
+      //.text("Students");
 
   svg.selectAll(".bar")
       .data(json)
+      //.transition().delay(5000).duration(5000)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("id", function(d) { return (d.id); })
-      .attr("x", function(d) { return x(d.college); })
+      .attr("id", function(d) { return (d.id)+'bar'; })
+      .attr("x", function(d) { return x(d.abbr); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.students); })
-      .attr("height", function(d) { return height - y(d.students); });
-      
-  svg.selectAll("rect")
-      .on("click", function(d) { d3.select(this).style({fill: '#FAAE0A', stroke: '#F08C00', opacity:'0.5', 'stroke-width':'3px'})});
+      .attr("height", function(d) { return height - y(d.students); })
+    .transition()
+            .duration(500)
+      .call(d3.helper.tooltip()
+            .text(function(d){ return 'School: '+ d.college + '<br />Type of School: '+ d.type +'<br />HOPE Students: ' +commasFormatter(d.students) +'<br />Amount Awarded: $'+ commasFormatter(d.amount); })
+        )
+      .on('mouseover', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'0.8', fill: d.fill})
+          $('#'+d.id+'ball').css( {"opacity": "0.8", "transition-duration": "300ms"} )
+          $('#'+d.id+'text').css( {"opacity": "1", "transition-duration": "300ms"} );
+                    })
+      .on('mouseout', function(d){
+          d3.select(this).transition().duration(200).style({opacity:'1', fill:"#C2C2C2"})
+          $('#'+d.id+'ball').css( {"opacity": "0.0", "transition-duration": "200ms"})
+          $('#'+d.id+'text').css( {"opacity": "0.0", "transition-duration": "200ms"});
+                    });
+     
 
 });
 
