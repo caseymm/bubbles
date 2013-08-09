@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Lottery Bubble Chart</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="js/tooltip.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -14,9 +16,51 @@
 
       <div class="row">
         <div class="col-12">
+          <div class="noBreak">
+        <div class="sixty">
+          <div class="headerText right">
+            <span class="blankBalls">H</span>
+            <span class="blankBalls">O</span>
+            <span class="blankBalls">P</span>
+            <span class="blankBalls">E</span>
+            <span class="blankBallsRed">by</span>
+          </div>
+        </div>
+        
+        <div class="forty">
+          <div class="headerText left"> 
+            <span class="college">SCHOOL</span>
+          </div>
+        </div>
+        
+        </div>
+        </div>
+      </div>
+          
+          <hr />
+      <div class="row">
+        <div class="col-12">
+          
+        <!--[if lte IE 8]>
+        <img src="images/header.png" style="margin-left:150px"></img>
+	<div style="margin:15px 0px 0px 0px;font-family:'Helvetica'; color:#777;font-size:12px;">Please upgrade your browser to the latest version to view this graphic interactively.</div><img src="images/bar.png">
+		<style type="text/css">
+                .noBreak {display:none;}
+                .btn-group-justified {display:none;}
+                #bubbles {display:none;}
+                </style> 		
+	<![endif]-->
+        <!--[if IE 9 ]>    
+          <div style="margin:15px 0px 0px 0px;font-family:'Helvetica'; color:#777;font-size:12px;">Please upgrade your browser to the latest version to view this graphic interactively.</div><img src="images/bar.png">
+		<style type="text/css">
+                .btn-group-justified {display:none;}
+                #bubbles {display:none;}
+                </style> 
+        <![endif]-->
+          
           <div class="btn-group btn-group-justified">
             <a id="sort" type="button" class="btn btn-default">Sort by type</a>
-            <a id="sortSize" type="button" class="btn btn-default"><div id="addBar">Sort by  number</div></a>
+            <a id="sortSize" type="button" class="btn btn-default"><div id="addBar">Sort by number</div></a>
             <a id="unSort" type="button" class="btn btn-default">View all together</a>
           </div> 
         </div>

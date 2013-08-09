@@ -14,7 +14,7 @@
                 "yValueB": "75",
 		"fill": "#990000",
 		"stroke": "#000000",
-		"img":"../images/UGAball2.png",
+		"img":"images/UGAball2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -34,7 +34,7 @@
                 "yValueB": "75",
 		"fill": "#957b33",
 		"stroke": "#143685",
-		"img":"../images/GATechBall2.png",
+		"img":"images/GATechBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -54,7 +54,7 @@
                 "yValueB": "75",
 		"fill": "#005eab",
 		"stroke": "#ffffff",
-		"img":"../images/GAStateBall2.png",
+		"img":"images/GAStateBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -74,7 +74,7 @@
                 "yValueB": "75",
 		"fill": "#DBC39E",
 		"stroke": "#960816",
-		"img":"../images/valdostaBall2.png",
+		"img":"images/valdostaBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -94,7 +94,7 @@
                 "yValueB": "75",
 		"fill": "#2235C7",
 		"stroke": "#C7A622",
-		"img":"../images/GASouthernBall2.png",
+		"img":"images/GASouthernBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -114,7 +114,7 @@
                 "yValueB": "75",
 		"fill": "#FFCC00",
 		"stroke": "#000000",
-		"img":"../images/kennesawBall2.png",
+		"img":"images/kennesawBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},
@@ -134,7 +134,7 @@
                 "yValueB": "75",
 		"fill": "#A81818",
 		"stroke": "#E3E3E3",
-		"img":"../images/gaPerimeterBall2.png",
+		"img":"images/gaPerimeterBall2.png",
                 "children": [
                     {"classYear": "Converters", "size": 1100},
                     {"classYear": "DelimitedTextConverter", "size": 900},

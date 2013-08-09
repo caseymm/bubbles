@@ -30,6 +30,11 @@ p{
   src: url(../fonts/Cabin.otf);
 }
 
+@font-face{
+  font-family: 'college';
+  src: url(../fonts/COLLEGE.TTF);
+}
+
 .node {
   cursor: pointer;
   stroke: #3182bd;
@@ -109,4 +114,78 @@ p{
 .least{
     float:right;
     margin: 0px 35px 0px 0px;
+}
+
+.headerText{
+    height: 75px;
+    margin: auto;
+    /*width: 80%;*/
+}
+
+.blankBalls{
+    background-image: url(../images/ballBlank.png);
+    background-size: contain;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    display: inline-block;
+    margin: 5px -4px 0px 0px;
+    padding: 5px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.blankBallsRed{
+    background-image: url(../images/ballBlankRed.png);
+    background-size: contain;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    display: inline-block;
+    margin: 0px -7px 0px 30px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 52px;
+    color:#ffffff;
+}
+
+.college{
+    font-family: 'college';
+    font-size: 60px;
+    margin-left:30px;
+}
+
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
+}
+
+.sixty{
+    width:59.5%;
+    position:relative;
+    display:inline-block;
+}
+
+.forty{
+    width:40%;
+    position:relative;
+    display:inline-block;
+}
+
+.noBreak{
+    width:800px;
+    margin:auto;
+}
+
+.selected {
+    -webkit-box-shadow: 0px 4px 0px 0px #ED4E4E;
+    box-shadow: 0px 4px 0px 0px #ED4E4E;
+    -moz-box-shadow: 0px 4px 0px 0px #ED4E4E;
+    background-color: #000000 !important;
 }

@@ -1,3 +1,6 @@
+function bar() {
+
+
 var data;
 
 var margin = {top: 20, right: 0, bottom: 130, left: 60},
@@ -27,7 +30,7 @@ var svg = d3.select("#bar").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("../data/hopeNums.json", function(json) {
+d3.json("data/hopeNums.json", function(json) {
   data = json;
   x.domain(data.map(function(d) { return d.abbr; }));
   y.domain([0, d3.max(data, function(d) { return +d.students; })]);
@@ -95,3 +98,4 @@ function type(d) {
   d.students = +d.students;
   return d;
 }
+};
