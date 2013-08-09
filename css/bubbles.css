@@ -13,6 +13,7 @@ body{
 
 .bar {
   fill: #C2C2C2;
+  cursor:pointer;
 }
 
 .x.axis path {

@@ -10,7 +10,8 @@
 		"xValue": "192",
 		"fill": "#990000",
 		"stroke": "#000000",
-		"img":"../images/UGAball.png"
+		"img":"../images/UGAball.png",
+		"lineup": "1"
 	},
 	{
 		"id": "3",
@@ -22,7 +23,8 @@
 		"xValue": "192",
 		"fill": "#005eab",
 		"stroke": "#ffffff",
-		"img":"../images/GAStateBall.png"
+		"img":"../images/GAStateBall.png",
+		"lineup": "2"
 	},
 	{
 		"id": "5",
@@ -34,7 +36,8 @@
 		"xValue": "384",
 		"fill": "#2235C7",
 		"stroke": "#C7A622",
-		"img":"../images/GASouthernBall.png"
+		"img":"../images/GASouthernBall.png",
+		"lineup": "3"
 	},
 	{
 		"id": "6",
@@ -46,7 +49,8 @@
 		"xValue": "576",
 		"fill": "#FFCC00",
 		"stroke": "#000000",
-		"img":"../images/kennesawBall.png"
+		"img":"../images/kennesawBall.png",
+		"lineup": "4"
 	},
 	{
 		"id": "7",
@@ -58,7 +62,8 @@
 		"xValue": "768",
 		"fill": "#A81818",
 		"stroke": "#E3E3E3",
-		"img":"../images/gaPerimeterBall.png"
+		"img":"../images/gaPerimeterBall.png",
+		"lineup": "5"
 	},
 	{
 		"id": "2",
@@ -70,7 +75,8 @@
 		"xValue": "192",
 		"fill": "#957b33",
 		"stroke": "#143685",
-		"img":"../images/GATechBall.png"
+		"img":"../images/GATechBall.png",
+		"lineup": "6"
 	},
 	{
 		"id": "4",
@@ -82,7 +88,8 @@
 		"xValue": "384",
 		"fill": "#DBC39E",
 		"stroke": "#960816",
-		"img":"../images/valdostaBall.png"
+		"img":"../images/valdostaBall.png",
+		"lineup": "7"
 	}
 
 ]

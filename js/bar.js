@@ -55,9 +55,9 @@ d3.json("../data/hopeNums.json", function(json) {
       .style("text-anchor", "end");
       //.text("Students");
 
+d3.select("#addBar").on("click", function(e){
   svg.selectAll(".bar")
       .data(json)
-      //.transition().delay(5000).duration(5000)
     .enter().append("rect")
       .attr("class", "bar")
       .attr("id", function(d) { return (d.id)+'bar'; })
@@ -65,8 +65,6 @@ d3.json("../data/hopeNums.json", function(json) {
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.students); })
       .attr("height", function(d) { return height - y(d.students); })
-    .transition()
-            .duration(500)
       .call(d3.helper.tooltip()
             .text(function(d){ return 'School: '+ d.college + '<br />Type of School: '+ d.type +'<br />HOPE Students: ' +commasFormatter(d.students) +'<br />Amount Awarded: $'+ commasFormatter(d.amount); })
         )
@@ -80,8 +78,17 @@ d3.json("../data/hopeNums.json", function(json) {
           $('#'+d.id+'ball').css( {"opacity": "0.0", "transition-duration": "200ms"})
           $('#'+d.id+'text').css( {"opacity": "0.0", "transition-duration": "200ms"});
                     });
-     
+   
+   svg.selectAll("rect")
+      .attr("transform", "translate(850,0)")
+      .transition()
+      .delay(function (d){ return d.lineup * 300;})
+      .duration(2000)
+      .attr("transform", "translate(0,0)")
+      .each("end", function() { d3.select(this).attr("transform", "translate(0,0)"); });
 
+});  
+     
 });
 
 function type(d) {

@@ -86,7 +86,7 @@ node.append("text")
 svg.style("opacity", 1e-6)
   .transition()
     .duration(1000)
-    .style("opacity", 1);      
+    .style("opacity", 1);
       
 force.on("tick", function(e) {
       svg.selectAll("circle").attr("transform", function(d) {return "translate(" + d.x + "," + d.y + ")";})
@@ -172,23 +172,24 @@ d3.select("#unSort").on("click", function(e){
   force.on("tick", function(e) {
     svg.selectAll("circle")
        .attr("id", (function(d) { return d.id+""; }))
+       .attr("r", function(d) { return radius_scale(parseInt(d.students));})
+       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";})
        .on('mouseover', function(d){
           d3.select(this).transition().duration(300).style({opacity:'0.8'});
                     })
        .on('mouseout', function(d){
           d3.select(this).transition().duration(200).style({opacity:'0.0',});
-                    })
-       .attr("r", function(d) { return radius_scale(parseInt(d.students));})
-       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";});
-    svg.selectAll("image")
-      .transition().duration(100)
+                    });
+       
+    svg.selectAll("image").attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";})
+      .transition().duration(150)
       .attr("x", function(d) { return (radius_scale(parseInt(d.students))*-1); })
       .attr("y", function(d) { return (radius_scale(parseInt(d.students))*-1); })
       .attr("width", function(d) { return (radius_scale(parseInt(d.students))*2); })
       .attr("height", function(d) { return (radius_scale(parseInt(d.students))*2); })
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";});
+      
+      .each("end", function() { d3.select(this).transition().duration(0); });
    svg.selectAll("text")
-      .transition().duration(100)
       .style("font-size", function(d) { return (radius_scale(parseInt(d.students))*.4);})
       .attr("dy", function(d) { return (radius_scale(parseInt(d.students))*.2); })
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";});
