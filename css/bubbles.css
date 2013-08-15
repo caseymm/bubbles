@@ -4,6 +4,14 @@ body{
     color: #000;
     margin:0px;
 }
+
+.desktop{
+    
+}
+
+.mobile{
+    display:none;
+}
 .axis path,
 .axis line {
   fill: none;
@@ -190,7 +198,7 @@ p{
     background-color: #000000 !important;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 400px){
     #bubbles{
     margin:auto;
     width:300px;
@@ -238,5 +246,26 @@ p{
     width:300px;
     margin:auto;
     height: 40px;
+}
+.headArea{
+    width:300px;
+    margin:auto;
+}
+
+.desktop{
+    display:none;
+}
+
+.mobile{
+    display:inline;
+}
+
+.btn {
+font-size: 11px !important;
+font-weight: 500;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+cursor: pointer;
 }
 }
