@@ -268,4 +268,8 @@ text-align: center;
 white-space: nowrap;
 cursor: pointer;
 }
+
+.col-12{
+    padding: 0px 0px 0px 0px !important;
+}
 }
