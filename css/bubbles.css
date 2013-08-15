@@ -189,3 +189,54 @@ p{
     -moz-box-shadow: 0px 4px 0px 0px #ED4E4E;
     background-color: #000000 !important;
 }
+
+@media screen and (max-width: 450px){
+    #bubbles{
+    margin:auto;
+    width:300px;
+}
+
+#bar{
+    margin:auto;
+    width:300px;
+    margin-top:-250px;
+}
+.A{
+    position:relative;
+    display:inline-block;
+    margin: 15px 18px 0px 18px;
+}
+.B{
+    position:relative;
+    display:inline-block;
+}
+.C{
+    position:relative;
+    display:inline-block;
+    margin: 0px 18px 0px 18px;
+}
+.D{
+    position:relative;
+    display:inline-block;
+}
+
+#mostToLeast{
+    font-size: 15px;
+    line-height: 15px;
+    /*margin-top: 12px;*/
+}
+
+.most{
+    margin: 0px 0px 0px 0px;
+}
+
+.least{
+    float:right;
+    margin: 0px 0px 0px 0px;
+}
+.bubbleArea{
+    width:300px;
+    margin:auto;
+    height: 40px;
+}
+}
