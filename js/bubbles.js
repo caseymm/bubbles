@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#typeInfo').hide();
   $('#mostToLeast').hide();
   $('#bar').hide();
-  
+  d3.select("#unSort").classed("selected", true)
   bubbles();
   });
 
@@ -94,6 +94,7 @@ force.on("tick", function(e) {
     });
 
 d3.select("#sort").on("click", function(e){
+	force.resume();
     d3.select(".selected").classed("selected", false)
             d3.select(this).classed("selected", true)
   $('#typeInfo').show()
@@ -124,6 +125,7 @@ d3.select("#sort").on("click", function(e){
   });
 });
 d3.select("#sortSize").on("click", function(e){
+	force.resume();
     d3.select(".selected").classed("selected", false)
             d3.select(this).classed("selected", true)
   $('#typeInfo').hide()
@@ -157,6 +159,7 @@ d3.select("#sortSize").on("click", function(e){
 });
   
 d3.select("#unSort").on("click", function(e){
+	force.resume();
     d3.select(".selected").classed("selected", false)
             d3.select(this).classed("selected", true)
   $('#typeInfo').hide()
