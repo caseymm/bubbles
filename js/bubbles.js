@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#typeInfo').hide();
   $('#mostToLeast').hide();
   $('#bar').hide();
-  
+  d3.select("#unSort").classed("selected", true)
   bubbles();
   });
 
